@@ -21,9 +21,26 @@ function App() {
     dispatch(fetchCurrencies());
   }, [dispatch]);
 
- useEffect(() => {
-    dispatch(fetchCoins({ currency }));
-  }, [currency, dispatch]);
+//  useEffect(() => {
+//     dispatch(fetchCoins({ currency }));
+//   }, [currency, dispatch]);  
+
+  useEffect(() => {
+     let isMounted = true;
+    const fetchData = () => {
+    if (isMounted) {
+      dispatch(fetchCoins({ currency }));
+    }
+  };
+
+  fetchData();
+      const interval = setInterval(fetchData, 60000);
+
+    // Cleanup
+    return () => 
+      isMounted = false;
+      clearInterval(interval);
+  }, [currency]);
 
   return (
     <>

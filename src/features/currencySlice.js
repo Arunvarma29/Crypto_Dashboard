@@ -1,7 +1,10 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-  baseCurrency: "usd",
+  baseCurrency:localStorage.getItem("currency") || "usd",
+  currencies: [],
+  loading: false,
+  error: null
 };
 
 const allowedCurrencies = ["usd", "inr", "eur"];

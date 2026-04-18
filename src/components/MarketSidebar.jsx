@@ -21,7 +21,7 @@ export default function MarketSidebar() {
           coin={{
             name: coin.name,
             cap: coin.market_cap,
-            change: coin.price_change_percentage_24h || 0,
+            change: coin.price_change_percentage_24h,
             up: coin.price_change_percentage_24h >= 0,
           }}
           isLast={index === coins.length - 1}
@@ -45,10 +45,20 @@ function CoinRow({ coin, isLast }) {
 
 // ── Left: name + market cap ───────────────────
 function CoinInfo({ name, cap }) {
+  const currency = useSelector((state) => state.currency.baseCurrency);
+  const currencySymbols = {
+    usd: "$",
+    inr: "₹",
+    eur: "€",
+  };
   return (
     <div className="flex-1">
       <p className="text-[14px] font-semibold text-slate-800 mb-0.5">{name}</p>
-      <p className="text-[12px] text-slate-400">  Mkt.Cap {formatMarketCap(cap)} </p>
+      <p className="text-[12px] text-slate-400">
+        {" "}
+        Mkt.Cap {currencySymbols[currency] || currency.toUpperCase()}{" "}
+        {formatMarketCap(cap)}{" "}
+      </p>
     </div>
   );
 }

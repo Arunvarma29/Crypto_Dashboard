@@ -1,49 +1,44 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrency } from "../features/currencySlice.js";
-import { current } from "@reduxjs/toolkit";
 
-export default function SearchHeader({ currency, onSearch }) {
+export default function SearchHeader({ onSearch }) {
   const dispatch = useDispatch();
+  const currency = useSelector((state) => state.currency.baseCurrency);
+
   return (
     <div className="flex items-center gap-4">
-
       <CurrencyDropdown
         currency={currency}
         onChange={(value) => dispatch(setCurrency(value))}
       />
       <SearchBar onSearch={onSearch} />
-
     </div>
   );
 }
 
 // ── Currency dropdown ────────────────────────
-function CurrencyDropdown({ currency }) {
-   const { currencies, loading } = useSelector(
-    (state) => state.currency
-  );
+function CurrencyDropdown({ currency,onChange }) {
+  const { currencies, loading } = useSelector((state) => state.currency);
 
   if (loading) return <p>Loading...</p>;
 
   return (
     <div className="relative">
-    <select
-      className="flex items-center gap-1.5 bg-white border border-slate-200
+      <select
+        className="flex items-center gap-1.5 bg-white border border-slate-200
                        rounded-xl px-3.5 py-2.5 font-semibold text-sm text-slate-800
                        cursor-pointer hover:border-slate-300 transition-colors"
-      value={currency}
-      onChange={(e)=>onchange?.(e.target.value)}
-    >
-      {currencies.map((curr) => (
-        <option key={curr} value={curr}>
-          {curr.toUpperCase()}
-        </option>
-      ))}
-      
-    </select>
-  
-  </div>
+        value={currency}
+        onChange={(e) => onChange?.(e.target.value)}
+      >
+        {currencies.map((curr) => (
+          <option key={curr} value={curr}>
+            {curr.toUpperCase()}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 }
 
@@ -64,7 +59,6 @@ function SearchBar({ onSearch }) {
     </div>
   );
 }
-
 
 function SearchIcon() {
   return (
