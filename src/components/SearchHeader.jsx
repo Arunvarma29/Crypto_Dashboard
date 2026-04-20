@@ -24,7 +24,7 @@ function CurrencyDropdown({ currency,onChange }) {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="relative">
+    <div className="px-1">
       <select
         className="flex items-center gap-1.5 bg-white border border-slate-200
                        rounded-xl px-3.5 py-2.5 font-semibold text-sm text-slate-800

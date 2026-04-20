@@ -8,14 +8,14 @@ export default function MarketSidebar() {
   if (error) return <p>{error}</p>;
 
   return (
-    <aside className="bg-white rounded-2xl border border-slate-200 p-5">
-      <h2 className="text-[15px] font-bold text-slate-800 leading-snug mb-5">
+    <aside className="w-90 bg-white  rounded-xl border-2 mt-7.5 border-slate-400 p-5">
+      <h2 className="text-[25px] font-bold text-slate-800 leading-snug mb-5">
         Cryptocurrency by
         <br />
         market cap
       </h2>
 
-      {coins.map((coin, index) => (
+      {coins.slice(0, 8).map((coin, index) => (
         <CoinRow
           key={coin.id}
           coin={{
@@ -35,7 +35,7 @@ export default function MarketSidebar() {
 function CoinRow({ coin, isLast }) {
   return (
     <div
-      className={`flex items-center py-3 ${isLast ? "" : "border-b border-slate-100"}`}
+      className={`flex items-center py-5 ${isLast ? "" : "border-b border-slate-100"}`}
     >
       <CoinInfo name={coin.name} cap={coin.cap} />
       <ChangeLabel change={coin.change} up={coin.up} />
@@ -53,7 +53,7 @@ function CoinInfo({ name, cap }) {
   };
   return (
     <div className="flex-1">
-      <p className="text-[14px] font-semibold text-slate-800 mb-0.5">{name}</p>
+      <p className="text-[18px] font-semibold text-slate-800 mb-0.5">{name}</p>
       <p className="text-[12px] text-slate-400">
         {" "}
         Mkt.Cap {currencySymbols[currency] || currency.toUpperCase()}{" "}
@@ -67,7 +67,7 @@ function CoinInfo({ name, cap }) {
 function ChangeLabel({ change, up }) {
   return (
     <div
-      className={`flex items-center gap-1 text-[13px] font-semibold
+      className={`flex items-center gap-1 text-[18px] font-semibold
                      ${up ? "text-emerald-500" : "text-amber-500"}`}
     >
       <span className="text-[10px]">{up ? "▲" : "▼"}</span>
