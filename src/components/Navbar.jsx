@@ -1,5 +1,13 @@
 import React from "react";
 
+/**
+ * Navbar Component
+ * Displays the application header with branding and navigation buttons
+ * Features:
+ * - Responsive design that scales across mobile, tablet, and desktop
+ * - Colored letter boxes spelling "CryptoDashboard"
+ * - Watchlist button for user interactions
+ */
 const navBar = () => {
   return (
     <>

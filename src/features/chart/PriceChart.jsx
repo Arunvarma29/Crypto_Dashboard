@@ -11,6 +11,7 @@ import TimeFilter from "../../components/TimeFilter.jsx";
 import { Line, Bar } from "react-chartjs-2";
 import { BarElement } from "chart.js";
 
+// Register Chart.js components for line and bar charts
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -21,6 +22,15 @@ ChartJS.register(
   BarElement,
 );
 
+/**
+ * PriceChart Component
+ * Displays cryptocurrency price trends as line or bar chart
+ * Props:
+ * - data: Chart data formatted for Chart.js (labels and datasets)
+ * - currency: Selected currency for display (USD, EUR, INR)
+ * - chartType: Chart type to display ('line' or 'bar')
+ * - activeFilter, onFilterChange: Time filter state and callback
+ */
 export default function PriceChart({
   data,
   activeFilter,
@@ -28,6 +38,7 @@ export default function PriceChart({
   currency,
   chartType,
 }) {
+  // Show loading state if no data is available
   if (!data || !data.datasets || data.datasets.length === 0) {
     return (
       <div className="h-40 sm:h-52 md:h-64 flex items-center justify-center text-slate-400 text-xs sm:text-sm">

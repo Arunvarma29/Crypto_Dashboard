@@ -16,7 +16,7 @@ export default function MarketSidebar() {
     }
   }, [coins]);
 
-  
+  // IMPORTANT: Fallback to previous data when API returns empty (prevents UI flicker / blank state during rate limit or refetch)
   const safeCoins = coins.length ? coins : prevMarket;
   const displayCoins = safeCoins.slice(0, 10);
 
