@@ -24,11 +24,11 @@ const navBar = () => {
           </span>
         </span>
 
-        <div className="flex gap-2 sm:gap-4 p-2 sm:p-3 md:p-5">
+        {/* <div className="flex gap-2 sm:gap-4 p-2 sm:p-3 md:p-5">
           <button className="border-2 bg-blue-950 text-white font-mono font-bold py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm md:text-base rounded-full hover:bg-blue-900 transition-colors" type="button">
             Watchlist
           </button>
-        </div>
+        </div> */}
       </div>
     </>
   );
