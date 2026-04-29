@@ -1,18 +1,117 @@
-# React + Vite
+Crypto Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, production-ready cryptocurrency dashboard built with **React(vite), Redux Toolkit, Chart.js, react-chartjs-2 and Tailwind CSS**.
+It provides real-time market insights, interactive visualizations, and a seamless user experience for tracking and analyzing crypto assets.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🌐 Live Demo
 
-## React Compiler
+🔗 https://crypto-dashboard-bay-five.vercel.app/
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+📸 Preview
 
-## Expanding the ESLint configuration
+### Dashboard Overview
+![Dashboard](./screenshots/dashboard1.png)
+![Dashboard](./screenshots/dashboard2.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+✨ Key Features
+
+📊 Market Intelligence
+
+* Real-time cryptocurrency data using CoinGecko API
+* Top assets ranked by market capitalization
+* 24h price change indicators
+
+📈 Advanced Charting
+
+* Interactive **Line & Bar charts**
+* Time filters: **1D, 1W, 1M, 6M, 1Y**
+* Multi-coin comparison
+* Smooth rendering with optimized datasets
+
+💱 Exchange Module
+
+* Convert between:
+
+  * Crypto ↔ Crypto
+  * Crypto ↔ Fiat (USD, INR, EUR)
+* Real-time conversion logic
+* Input validation & error handling
+
+🥧 Portfolio Visualization
+
+* Asset distribution using pie charts
+* Value & percentage display
+* Clean and intuitive layout
+
+### 🔍 Smart Search & Selection
+
+* Dynamic coin search
+* Multi-select comparison system
+
+---
+
+## 🛠️ Tech Stack
+
+```
+Frontend: React.js(Vite bundler)
+State Management: Redux Toolkit
+Data Visualization: Chart.js, react-chartjs-2
+Styling: Tailwind CSS
+API: CoinGecko
+```
+
+---
+
+⚙️ Getting Started
+
+```bash
+git clone https://github.com/Arunvarma29/Crypto_Dashboard.git
+cd crypto-dashboard
+npm install
+npm run dev
+```
+
+---
+
+📂 Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+├── features/       # Chart, Exchange, Portfolio modules
+├── services/       # API abstraction layer
+├── store/          # Redux slices
+├── utils/          # Data formatting & helpers
+```
+---
+
+⚡ Highlights
+
+* Optimized API handling with fallback strategy to prevent UI flicker
+* Scalable feature-based architecture
+* Responsive design across devices
+* Clean separation of concerns (UI, logic, data)
+
+---
+
+📄 License
+
+MIT
+
+---
+
+👨‍💻 Author
+
+Arun Varma
+
+---
+
+⭐ Support
+
+If you find this project useful, consider giving it a ⭐
