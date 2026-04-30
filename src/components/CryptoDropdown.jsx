@@ -98,7 +98,7 @@ export default function CryptoDropdown({ selected, onChange }) {
       {/* Dropdown menu */}
       {open && (
         <div
-          className="absolute right-0 mt-2 w-48 sm:w-52 bg-white border border-slate-200
+          className="absolute left-0 mt-2 w-48 sm:w-52 bg-white border border-slate-200
                         rounded-lg shadow-lg z-20 max-h-60 overflow-y-auto"
         >
           {mergedCoins.map((coin) => {

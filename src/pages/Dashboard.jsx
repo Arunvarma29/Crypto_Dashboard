@@ -83,7 +83,7 @@ export default function Dashboard() {
           {/* LEFT SIDE */}
           <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6">
             {/* Top controls */}
-            <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 sm:gap-3">
+            <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 sm:gap-3 overflow-visible z-10">
               <CurrencyDropdown
                 currency={currency}
                 onChange={(value) => dispatch(setCurrency(value))}
